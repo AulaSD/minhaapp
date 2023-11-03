@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Botao from './componentes/Botao';
+import CampoTexto from './componentes/CampoTexto';
+import Tabela from './componentes/Tabela';
 
 function App() {
+  
+  const AoPesquisar = (evento)=>{
+    evento.preventDefault();
+    
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edite <code>src/App.js</code> e salve para recarregar.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form onSubmit={AoPesquisar}>
+        <CampoTexto label="Informe seu Herói ou Vilão:"/>
+        <Botao texto="Pesquisar"/>
+      </form>
+      <Tabela/>
     </div>
   );
 }
